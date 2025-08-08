@@ -543,8 +543,6 @@
         .sidebar-section h3::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
             width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--accent), transparent);
@@ -1137,12 +1135,12 @@
             left: 50%;
         }
 
-        .left::after {
-            right: -12px;
+        .left::after, .right::after {
+            left: 21px;
         }
 
-        .right::after {
-            left: -12px;
+        .right {
+            left: 0;
         }
 
         .timeline-content {
@@ -1959,36 +1957,24 @@
             }
         }
 
-        /* Tablet View (768px-992px) */
-        @media (max-width: 992px) and (min-width: 769px) {
-            .navbar {
-                flex-direction: column;
-                align-items: center;
-                padding: 1.5rem 5%;
-            }
-
-            .logo {
-                margin-bottom: 1rem;
-            }
-
-            .nav-links {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .nav-links li {
-                margin: 0 1rem;
-            }
-
-            .header-controls {
-                position: static;
-                transform: none;
-                margin-top: 1rem;
-                margin-left: 0;
-            }
-        }
-
+        /* Tablet View (768px-992px) - Replace navbar with sidebar */
         @media (max-width: 992px) {
+            .navbar {
+                padding: 1rem 5%;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .header-controls {
+                display: none;
+            }
+            
             .hero h1 {
                 font-size: 3rem;
             }
@@ -2046,8 +2032,6 @@
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
             }
 
             .nav-links {
