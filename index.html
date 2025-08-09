@@ -21,15 +21,15 @@
         }
 
         [data-theme="light"] {
-            --primary: #f0f4f8;
+            --primary: #f8f9fa;
             --secondary: #3a7bd5;
             --accent: #ff4d4d;
-            --light: #1e293b;
-            --dark: #d9e2ec;
-            --text: #1e293b;
-            --text-light: #486581;
-            --card-bg: rgba(240, 244, 248, 0.8);
-            --header-bg: rgba(240, 244, 248, 0.9);
+            --light: #343a40;
+            --dark: #e9ecef;
+            --text: #212529;
+            --text-light: #495057;
+            --card-bg: rgba(248, 249, 250, 0.9);
+            --header-bg: rgba(248, 249, 250, 0.95);
             --timeline-line: linear-gradient(to bottom, #3a7bd5, #00d2ff);
             --grid-color: rgba(58, 123, 213, 0.1);
         }
@@ -52,7 +52,48 @@
             scroll-behavior: smooth;
         }
 
-        /* Animated Preloader */
+        /* Language Switch Button */
+        .language-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 10px;
+        }
+
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--secondary);
+            color: var(--text);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(5px);
+        }
+
+        .lang-btn:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .lang-btn.active {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .lang-btn i {
+            font-size: 0.9rem;
+        }
+
+        /* Preloader */
         .preloader {
             position: fixed;
             top: 0;
@@ -136,7 +177,7 @@
             60%, 100% { content: '...'; }
         }
 
-        /* Enhanced Header/Navbar */
+        /* Header */
         header {
             position: fixed;
             top: 0;
@@ -208,7 +249,7 @@
             transform-origin: left;
         }
 
-        /* Enhanced Mobile Menu Button */
+        /* Mobile Menu */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -259,7 +300,7 @@
             background: var(--accent);
         }
 
-        /* Enhanced Mobile Menu */
+        /* Nav Links */
         .nav-links {
             display: flex;
             list-style: none;
@@ -321,11 +362,11 @@
         .nav-links a::after {
             content: '';
             position: absolute;
+            bottom: 0;
+            left: 0;
             width: 0;
             height: 2px;
             background: var(--secondary);
-            bottom: 0;
-            left: 0;
             transition: width 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
@@ -378,7 +419,7 @@
             color: var(--secondary);
         }
 
-        /* Enhanced Modern Sidebar with Overlay */
+        /* Sidebar */
         .sidebar {
             position: fixed;
             top: 0;
@@ -636,21 +677,7 @@
             text-shadow: 0 0 8px rgba(100, 255, 218, 0.6);
         }
 
-        /* Scrollbar styling */
-        .sidebar::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .sidebar::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .sidebar::-webkit-scrollbar-thumb {
-            background: linear-gradient(var(--accent), #64ffda);
-            border-radius: 3px;
-        }
-
-        /* Hero Section with Parallax Effect */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -863,7 +890,7 @@
             to { opacity: 1; }
         }
 
-        /* Section Titles with Animated Underline */
+        /* Sections */
         .section {
             padding: 8rem 5%;
             max-width: 1400px;
@@ -931,7 +958,7 @@
             font-size: clamp(1rem, 1.2vw, 1.1rem);
         }
 
-        /* About Section with Floating Animation */
+        /* About Section */
         .about-content {
             display: flex;
             align-items: center;
@@ -947,6 +974,8 @@
             transition: all 0.5s ease;
             border: 2px solid var(--secondary);
             animation: float 6s ease-in-out infinite;
+            max-width: 400px;
+            height: 500px;
         }
 
         @keyframes float {
@@ -1074,7 +1103,7 @@
             100% { background-position: -200% 0; }
         }
 
-        /* Timeline - Experience with 3D Effect */
+        /* Timeline - Experience */
         .timeline {
             position: relative;
             max-width: 1200px;
@@ -1229,7 +1258,7 @@
             color: var(--accent);
         }
 
-        /* Education Section with Flip Cards */
+        /* Education Section */
         .education-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1336,7 +1365,7 @@
             color: var(--accent);
         }
 
-        /* Projects Section with 3D Hover Effect */
+        /* Projects Section */
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1349,7 +1378,6 @@
             overflow: hidden;
             box-shadow: 0 0 20px rgba(100, 255, 218, 0.1);
             transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-            position: relative;
             background: var(--card-bg);
             border: 1px solid rgba(100, 255, 218, 0.1);
             backdrop-filter: blur(5px);
@@ -1540,7 +1568,7 @@
             transform: translateX(3px);
         }
 
-        /* Contact Section with Floating Form */
+        /* Contact Section */
         .contact {
             background-color: var(--dark);
             color: var(--text);
@@ -1734,7 +1762,7 @@
             resize: vertical;
         }
 
-        /* Enhanced Footer with Wave Effect */
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: var(--text);
@@ -1885,7 +1913,7 @@
             animation: fadeInOut 3s infinite;
         }
 
-        /* Back to Top Button with Floating Effect */
+        /* Back to Top Button */
         .back-to-top {
             position: fixed;
             bottom: 2rem;
@@ -1957,7 +1985,6 @@
             }
         }
 
-        /* Tablet View (768px-992px) - Replace navbar with sidebar */
         @media (max-width: 992px) {
             .navbar {
                 padding: 1rem 5%;
@@ -2006,10 +2033,6 @@
                 left: 21px;
             }
             
-            .left::after, .right::after {
-                left: 21px;
-            }
-            
             .right {
                 left: 0;
             }
@@ -2028,7 +2051,6 @@
             }
         }
 
-        /* Mobile View (up to 768px) */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -2154,22 +2176,26 @@
     </style>
 </head>
 <body>
-    <!-- Animated Preloader -->
+    <!-- Preloader -->
     <div class="preloader">
         <div class="cyber-loader"></div>
         <div class="loading-text">INITIALIZING SYSTEMS</div>
+    </div>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en"><i class="fas fa-language"></i> EN</button>
+        <button class="lang-btn" data-lang="fr"><i class="fas fa-language"></i> FR</button>
     </div>
 
     <!-- Floating Tech Elements -->
     <div class="floating-tech" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
     <div class="floating-tech" style="top: 60%; left: 80%; animation-delay: 5s;"></div>
 
-    <!-- Enhanced Header/Navbar -->
+    <!-- Header -->
     <header>
         <nav class="navbar">
-            <a href="#" class="logo">
-                Y<span>B</span>
-            </a>
+            <a href="#" class="logo">Y<span>B</span></a>
             <ul class="nav-links">
                 <li><a href="#home"><i class="fas fa-home"></i> <span data-translate="home">Home</span></a></li>
                 <li><a href="#about"><i class="fas fa-user"></i> <span data-translate="about">About</span></a></li>
@@ -2181,9 +2207,6 @@
                     <button class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <button class="language-toggle" aria-label="Toggle language">
-                        <i class="fas fa-language"></i> <span>FR</span>
-                    </button>
                 </div>
             </ul>
             <button class="hamburger">
@@ -2194,7 +2217,7 @@
         </nav>
     </header>
 
-    <!-- Modern Sidebar with Overlay -->
+    <!-- Sidebar -->
     <div class="sidebar-overlay"></div>
     <div class="sidebar">
         <div class="sidebar-header">
@@ -2227,18 +2250,17 @@
                 <h3 data-translate="settings">Settings</h3>
                 <ul class="sidebar-links">
                     <li><a href="#" class="sidebar-theme-toggle"><i class="fas fa-moon"></i> <span data-translate="dark_mode">Dark Mode</span></a></li>
-                    <li><a href="#" class="sidebar-language-toggle"><i class="fas fa-language"></i> <span data-translate="language">Language</span></a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- Hero Section with Parallax Effect -->
+    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="cyber-grid"></div>
         <div class="hero-content">
-            <h1 data-translate="name">Yassine <span>Bouabid</span></h1>
-            <h2 data-translate="title">Mechanical Design & Simulation Engineer</h2>
+            <h1>Yassine <span>Bouabid</span></h1>
+            <h2 data-translate="hero_title">Mechanical Design & Simulation Engineer</h2>
             <p data-translate="hero_desc">Specializing in CAD design, numerical simulation, and mechanical systems optimization with a passion for innovation and smart systems.</p>
             <div class="hero-btns">
                 <a href="#projects" class="btn" data-translate="view_work">View My Work</a>
@@ -2250,20 +2272,21 @@
         </div>
     </section>
 
-    <!-- About Section with Floating Animation -->
+    <!-- About Section -->
     <section class="section" id="about">
         <div class="section-title">
             <h2 data-translate="about_me">About Me</h2>
-            <p data-translate="about_desc">Get to know more about my professional background and skills</p>
+            <p data-translate="about_sub">Get to know more about my professional background and skills</p>
         </div>
         <div class="about-content">
             <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1580927752452-89d86da3fa0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Yassine Bouabid">
+                <!-- Replace with your photo -->
+                <img src="images/profile.jpg" alt="Yassine Bouabid" id="profile-photo">
             </div>
             <div class="about-text">
-                <h3 data-translate="specialist_title">Mechanical Engineering Specialist</h3>
-                <p data-translate="about_text1">Motivated and detail-oriented Mechanical Engineering master's student with hands-on experience in electromechanical systems, 3D design (CATIA V5, SolidWorks), and numerical simulation using Abaqus.</p>
-                <p data-translate="about_text2">Passionate about innovation, robotics, and smart systems design, with strong analytical and problem-solving skills. Known for adaptability, teamwork, and a proactive mindset in technical environments.</p>
+                <h3 data-translate="about_title">Mechanical Engineering Specialist</h3>
+                <p data-translate="about_desc1">Motivated and detail-oriented Mechanical Engineering master's student with hands-on experience in electromechanical systems, 3D design (CATIA V5, SolidWorks), and numerical simulation using Abaqus.</p>
+                <p data-translate="about_desc2">Passionate about innovation, robotics, and smart systems design, with strong analytical and problem-solving skills. Known for adaptability, teamwork, and a proactive mindset in technical environments.</p>
                 
                 <div class="skills">
                     <div class="skill-item">
@@ -2307,50 +2330,50 @@
         </div>
     </section>
 
-    <!-- Experience Section with 3D Timeline -->
+    <!-- Experience Section -->
     <section class="section" id="experience">
         <div class="section-title">
-            <h2 data-translate="professional_exp">Professional Experience</h2>
-            <p data-translate="exp_desc">My journey through various technical roles and responsibilities</p>
+            <h2 data-translate="experience_title">Professional Experience</h2>
+            <p data-translate="experience_sub">My journey through various technical roles and responsibilities</p>
         </div>
         <div class="timeline">
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> <span data-translate="june_2024">June 2024</span> - <span data-translate="oct_2024">October 2024</span></div>
-                    <h3 class="timeline-title" data-translate="tech_conceptor">Technical Conceptor – Internship</h3>
-                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="commune_oulad">Commune of Oulad Ali Toualaa, Casablanca</span></div>
+                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> June 2024 - October 2024</div>
+                    <h3 class="timeline-title" data-translate="exp1_title">Technical Conceptor – Internship</h3>
+                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="exp1_company">Commune of Oulad Ali Toualaa, Casablanca</span></div>
                     <div class="timeline-desc">
                         <ul>
-                            <li data-translate="exp_point1">Updated technical schematics and ensured consistency in technical documentation</li>
-                            <li data-translate="exp_point2">Conducted mechanical design training sessions (CAD) for technical staff</li>
-                            <li data-translate="exp_point3">Recognized for technical proficiency, autonomy, and effective knowledge transfer</li>
+                            <li data-translate="exp1_desc1">Updated technical schematics and ensured consistency in technical documentation</li>
+                            <li data-translate="exp1_desc2">Conducted mechanical design training sessions (CAD) for technical staff</li>
+                            <li data-translate="exp1_desc3">Recognized for technical proficiency, autonomy, and effective knowledge transfer</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="timeline-item right">
                 <div class="timeline-content">
-                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> <span data-translate="apr_2024">Apr 2024</span> - <span data-translate="apr_2024">Apr 2024</span></div>
-                    <h3 class="timeline-title" data-translate="volunteer">Volunteer – Humanitarian Operations</h3>
-                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="association_lueur">Association Lueur d'Espoir, Tangier</span></div>
+                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> Apr 2024 - Apr 2024</div>
+                    <h3 class="timeline-title" data-translate="exp2_title">Volunteer – Humanitarian Operations</h3>
+                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="exp2_company">Association Lueur d'Espoir, Tangier</span></div>
                     <div class="timeline-desc">
                         <ul>
-                            <li data-translate="vol_point1">Organized and distributed aid to families in need during Ramadan</li>
-                            <li data-translate="vol_point2">Engaged in community support and awareness campaigns on social responsibility</li>
+                            <li data-translate="exp2_desc1">Organized and distributed aid to families in need during Ramadan</li>
+                            <li data-translate="exp2_desc2">Engaged in community support and awareness campaigns on social responsibility</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="timeline-item left">
                 <div class="timeline-content">
-                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> <span data-translate="feb_2021">Feb 2021</span> - <span data-translate="may_2021">May 2021</span></div>
-                    <h3 class="timeline-title" data-translate="electro_tech">Electromechanical Technician – Internship</h3>
-                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="sahara_plomb">SAHARA PLOMB, Casablanca</span></div>
+                    <div class="timeline-date"><i class="far fa-calendar-alt"></i> Feb 2021 - May 2021</div>
+                    <h3 class="timeline-title" data-translate="exp3_title">Electromechanical Technician – Internship</h3>
+                    <div class="timeline-company"><i class="fas fa-building"></i> <span data-translate="exp3_company">SAHARA PLOMB, Casablanca</span></div>
                     <div class="timeline-desc">
                         <ul>
-                            <li data-translate="tech_point1">Conducted preventive and corrective maintenance on heavy industrial equipment</li>
-                            <li data-translate="tech_point2">Assisted in diagnostics and repair of electrical and mechanical systems</li>
-                            <li data-translate="tech_point3">Participated in technical documentation and reporting processes</li>
+                            <li data-translate="exp3_desc1">Conducted preventive and corrective maintenance on heavy industrial equipment</li>
+                            <li data-translate="exp3_desc2">Assisted in diagnostics and repair of electrical and mechanical systems</li>
+                            <li data-translate="exp3_desc3">Participated in technical documentation and reporting processes</li>
                         </ul>
                     </div>
                 </div>
@@ -2358,68 +2381,68 @@
         </div>
     </section>
 
-    <!-- Education Section with Flip Cards -->
+    <!-- Education Section -->
     <section class="section" id="education">
         <div class="section-title">
-            <h2 data-translate="education">Education</h2>
-            <p data-translate="education_desc">My academic journey and qualifications</p>
+            <h2 data-translate="education_title">Education</h2>
+            <p data-translate="education_sub">My academic journey and qualifications</p>
         </div>
         <div class="education-container">
             <div class="education-card">
-                <div class="education-date"><i class="far fa-calendar-alt"></i> <span data-translate="year_2024">2024</span> – <span data-translate="present">Present</span></div>
-                <h3 class="education-title" data-translate="master_degree">Master's in Numerical Design & Simulation in Mechanics</h3>
-                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="fsac_mecatronique">FSAC – Centre d'Excellence Mécatronique, Casablanca</span></div>
+                <div class="education-date"><i class="far fa-calendar-alt"></i> 2024 – Present</div>
+                <h3 class="education-title" data-translate="edu1_title">Master's in Numerical Design & Simulation in Mechanics</h3>
+                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="edu1_school">FSAC – Centre d'Excellence Mécatronique, Casablanca</span></div>
                 <div class="education-desc">
                     <ul>
-                        <li data-translate="master_point1">Advanced training in computer-aided design (CAD) and numerical simulation (FEM, FEA)</li>
-                        <li data-translate="master_point2">In-depth application of tools such as CATIA V5, SolidWorks, and Abaqus</li>
-                        <li data-translate="master_point3">Focus on mechatronic systems, intelligent automation, and vibration analysis (NVH)</li>
+                        <li data-translate="edu1_desc1">Advanced training in computer-aided design (CAD) and numerical simulation (FEM, FEA)</li>
+                        <li data-translate="edu1_desc2">In-depth application of tools such as CATIA V5, SolidWorks, and Abaqus</li>
+                        <li data-translate="edu1_desc3">Focus on mechatronic systems, intelligent automation, and vibration analysis (NVH)</li>
                     </ul>
                 </div>
             </div>
             <div class="education-card">
-                <div class="education-date"><i class="far fa-calendar-alt"></i> <span data-translate="year_2023">2023</span> – <span data-translate="year_2024">2024</span></div>
-                <h3 class="education-title" data-translate="bachelor_degree">Bachelor's in Numerical Design & Simulation in Mechanics</h3>
-                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="fsac_mecatronique">FSAC – Centre d'Excellence Mécatronique, Casablanca</span></div>
+                <div class="education-date"><i class="far fa-calendar-alt"></i> 2023 – 2024</div>
+                <h3 class="education-title" data-translate="edu2_title">Bachelor's in Numerical Design & Simulation in Mechanics</h3>
+                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="edu2_school">FSAC – Centre d'Excellence Mécatronique, Casablanca</span></div>
                 <div class="education-desc">
                     <ul>
-                        <li data-translate="bachelor_point1">Solid foundation in 3D modeling, finite element analysis, and dynamic simulation</li>
-                        <li data-translate="bachelor_point2">Applied theoretical concepts to real-world simulations and virtual prototyping</li>
-                        <li data-translate="bachelor_point3">Use of Matlab, Python, and Arduino for technical and control system simulations</li>
+                        <li data-translate="edu2_desc1">Solid foundation in 3D modeling, finite element analysis, and dynamic simulation</li>
+                        <li data-translate="edu2_desc2">Applied theoretical concepts to real-world simulations and virtual prototyping</li>
+                        <li data-translate="edu2_desc3">Use of Matlab, Python, and Arduino for technical and control system simulations</li>
                     </ul>
                 </div>
             </div>
             <div class="education-card">
-                <div class="education-date"><i class="far fa-calendar-alt"></i> <span data-translate="year_2021">2021</span> – <span data-translate="year_2023">2023</span></div>
-                <h3 class="education-title" data-translate="bts_degree">BTS in Electromechanics & Automated Systems</h3>
-                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="lycee_settat">Lycée Technique de Settat</span></div>
+                <div class="education-date"><i class="far fa-calendar-alt"></i> 2021 – 2023</div>
+                <h3 class="education-title" data-translate="edu3_title">BTS in Electromechanics & Automated Systems</h3>
+                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="edu3_school">Lycée Technique de Settat</span></div>
                 <div class="education-desc">
                     <ul>
-                        <li data-translate="bts_point1">Practical training in electrical and mechanical system design, installation, and maintenance</li>
-                        <li data-translate="bts_point2">Hands-on experience with automated production lines, control systems, and CNC machines</li>
-                        <li data-translate="bts_point3">Learning modules included preventive maintenance, technical diagnostics, and system integration</li>
+                        <li data-translate="edu3_desc1">Practical training in electrical and mechanical system design, installation, and maintenance</li>
+                        <li data-translate="edu3_desc2">Hands-on experience with automated production lines, control systems, and CNC machines</li>
+                        <li data-translate="edu3_desc3">Learning modules included preventive maintenance, technical diagnostics, and system integration</li>
                     </ul>
                 </div>
             </div>
             <div class="education-card">
-                <div class="education-date"><i class="far fa-calendar-alt"></i> <span data-translate="year_2020">2020</span> – <span data-translate="year_2021">2021</span></div>
-                <h3 class="education-title" data-translate="hs_diploma">High School Diploma in Electrical Science & Technology</h3>
-                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="lycee_benslimane">Lycée Charif El Idrissi, Benslimane</span></div>
+                <div class="education-date"><i class="far fa-calendar-alt"></i> 2020 – 2021</div>
+                <h3 class="education-title" data-translate="edu4_title">High School Diploma in Electrical Science & Technology</h3>
+                <div class="education-school"><i class="fas fa-university"></i> <span data-translate="edu4_school">Lycée Charif El Idrissi, Benslimane</span></div>
                 <div class="education-desc">
                     <ul>
-                        <li data-translate="hs_point1">Focused on core engineering principles in physics, electrical circuits, and technical drawing</li>
-                        <li data-translate="hs_point2">Developed logical thinking and solid mathematical foundation for engineering studies</li>
+                        <li data-translate="edu4_desc1">Focused on core engineering principles in physics, electrical circuits, and technical drawing</li>
+                        <li data-translate="edu4_desc2">Developed logical thinking and solid mathematical foundation for engineering studies</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section with 3D Hover Effect -->
+    <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="section-title">
-            <h2 data-translate="projects">Projects</h2>
-            <p data-translate="projects_desc">Selected engineering projects and achievements</p>
+            <h2 data-translate="projects_title">Projects</h2>
+            <p data-translate="projects_sub">Selected engineering projects and achievements</p>
         </div>
         <div class="projects-container">
             <div class="project-card">
@@ -2431,12 +2454,12 @@
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3 data-translate="project1_title">Automotive Shock Absorber Simulation</h3>
-                    <p data-translate="project1_desc">Numerical Modeling & Dynamic Analysis using Python to simulate vehicle shock absorber behavior under various conditions.</p>
+                    <h3 data-translate="proj1_title">Automotive Shock Absorber Simulation</h3>
+                    <p data-translate="proj1_desc">Numerical Modeling & Dynamic Analysis using Python to simulate vehicle shock absorber behavior under various conditions.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
-                        <span class="tag" data-translate="num_methods">Numerical Methods</span>
-                        <span class="tag" data-translate="dynamics">Dynamics</span>
+                        <span class="tag" data-translate="proj1_tag1">Numerical Methods</span>
+                        <span class="tag" data-translate="proj1_tag2">Dynamics</span>
                     </div>
                     <div class="project-links">
                         <a href="#"><i class="fas fa-external-link-alt"></i> <span data-translate="view_project">View Project</span></a>
@@ -2452,8 +2475,8 @@
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3 data-translate="project2_title">Mechanical Bracket FEA</h3>
-                    <p data-translate="project2_desc">Design and Finite Element Analysis of a Mechanical Bracket using SolidWorks & Abaqus for industrial applications.</p>
+                    <h3 data-translate="proj2_title">Mechanical Bracket FEA</h3>
+                    <p data-translate="proj2_desc">Design and Finite Element Analysis of a Mechanical Bracket using SolidWorks & Abaqus for industrial applications.</p>
                     <div class="project-tags">
                         <span class="tag">SolidWorks</span>
                         <span class="tag">Abaqus</span>
@@ -2473,12 +2496,12 @@
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3 data-translate="project3_title">4-Cylinder Engine Simulation</h3>
-                    <p data-translate="project3_desc">3D Modeling & Kinematic Analysis of a four-cylinder engine using CATIA V5, simulating internal component motion.</p>
+                    <h3 data-translate="proj3_title">4-Cylinder Engine Simulation</h3>
+                    <p data-translate="proj3_desc">3D Modeling & Kinematic Analysis of a four-cylinder engine using CATIA V5, simulating internal component motion.</p>
                     <div class="project-tags">
                         <span class="tag">CATIA V5</span>
-                        <span class="tag" data-translate="kinematics">Kinematics</span>
-                        <span class="tag" data-translate="engine_design">Engine Design</span>
+                        <span class="tag" data-translate="proj3_tag1">Kinematics</span>
+                        <span class="tag" data-translate="proj3_tag2">Engine Design</span>
                     </div>
                     <div class="project-links">
                         <a href="#"><i class="fas fa-external-link-alt"></i> <span data-translate="view_project">View Project</span></a>
@@ -2494,12 +2517,12 @@
                     </div>
                 </div>
                 <div class="project-info">
-                    <h3 data-translate="project4_title">Smart CNC-Controlled Robotic Arm</h3>
-                    <p data-translate="project4_desc">Designed and manufactured an intelligent robotic arm using CNC machining techniques with Arduino-based control system.</p>
+                    <h3 data-translate="proj4_title">Smart CNC-Controlled Robotic Arm</h3>
+                    <p data-translate="proj4_desc">Designed and manufactured an intelligent robotic arm using CNC machining techniques with Arduino-based control system.</p>
                     <div class="project-tags">
                         <span class="tag">CNC</span>
                         <span class="tag">Arduino</span>
-                        <span class="tag" data-translate="robotics">Robotics</span>
+                        <span class="tag" data-translate="proj4_tag1">Robotics</span>
                     </div>
                     <div class="project-links">
                         <a href="#"><i class="fas fa-external-link-alt"></i> <span data-translate="view_project">View Project</span></a>
@@ -2509,15 +2532,15 @@
         </div>
     </section>
 
-    <!-- Contact Section with Floating Form -->
+    <!-- Contact Section -->
     <section class="section contact" id="contact">
         <div class="section-title">
-            <h2 data-translate="contact_me">Contact Me</h2>
-            <p data-translate="contact_desc">Get in touch for collaborations or opportunities</p>
+            <h2 data-translate="contact_title">Contact Me</h2>
+            <p data-translate="contact_sub">Get in touch for collaborations or opportunities</p>
         </div>
         <div class="contact-container">
             <div class="contact-info">
-                <h3 data-translate="contact_info">Contact Information</h3>
+                <h3 data-translate="contact_info_title">Contact Information</h3>
                 <div class="contact-details">
                     <div class="contact-item">
                         <div class="contact-icon">
@@ -2557,16 +2580,16 @@
             <div class="contact-form">
                 <form id="form">
                     <div class="form-group">
-                        <input type="text" placeholder="Your Name" required data-translate="your_name">
+                        <input type="text" placeholder="Your Name" required data-translate-placeholder="your_name">
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" required data-translate="your_email">
+                        <input type="email" placeholder="Your Email" required data-translate-placeholder="your_email">
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Subject" data-translate="subject">
+                        <input type="text" placeholder="Subject" data-translate-placeholder="subject">
                     </div>
                     <div class="form-group">
-                        <textarea placeholder="Your Message" required data-translate="your_message"></textarea>
+                        <textarea placeholder="Your Message" required data-translate-placeholder="your_message"></textarea>
                     </div>
                     <button type="submit" class="btn" data-translate="send_message">Send Message</button>
                 </form>
@@ -2574,7 +2597,7 @@
         </div>
     </section>
 
-    <!-- Enhanced Footer with Wave Effect -->
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <a href="#" class="footer-logo">Y<span>B</span></a>
@@ -2591,16 +2614,194 @@
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-researchgate"></i></a>
             </div>
-            <p class="copyright">&copy; 2023 Yassine Bouabid. <span data-translate="all_rights">All Rights Reserved</span>.</p>
+            <p class="copyright">&copy; 2023 Yassine Bouabid. <span data-translate="rights">All Rights Reserved.</span></p>
         </div>
     </footer>
 
-    <!-- Back to Top Button with Floating Effect -->
+    <!-- Back to Top Button -->
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
     </a>
 
     <script>
+        // Translation dictionary
+        const translations = {
+            en: {
+                home: "Home",
+                about: "About",
+                experience: "Experience",
+                education: "Education",
+                projects: "Projects",
+                contact: "Contact",
+                quick_links: "Quick Links",
+                navigation: "Navigation",
+                contact_info: "Contact Info",
+                settings: "Settings",
+                dark_mode: "Dark Mode",
+                hero_title: "Mechanical Design & Simulation Engineer",
+                hero_desc: "Specializing in CAD design, numerical simulation, and mechanical systems optimization with a passion for innovation and smart systems.",
+                view_work: "View My Work",
+                contact_me: "Contact Me",
+                about_me: "About Me",
+                about_sub: "Get to know more about my professional background and skills",
+                about_title: "Mechanical Engineering Specialist",
+                about_desc1: "Motivated and detail-oriented Mechanical Engineering master's student with hands-on experience in electromechanical systems, 3D design (CATIA V5, SolidWorks), and numerical simulation using Abaqus.",
+                about_desc2: "Passionate about innovation, robotics, and smart systems design, with strong analytical and problem-solving skills. Known for adaptability, teamwork, and a proactive mindset in technical environments.",
+                experience_title: "Professional Experience",
+                experience_sub: "My journey through various technical roles and responsibilities",
+                exp1_title: "Technical Conceptor – Internship",
+                exp1_company: "Commune of Oulad Ali Toualaa, Casablanca",
+                exp1_desc1: "Updated technical schematics and ensured consistency in technical documentation",
+                exp1_desc2: "Conducted mechanical design training sessions (CAD) for technical staff",
+                exp1_desc3: "Recognized for technical proficiency, autonomy, and effective knowledge transfer",
+                exp2_title: "Volunteer – Humanitarian Operations",
+                exp2_company: "Association Lueur d'Espoir, Tangier",
+                exp2_desc1: "Organized and distributed aid to families in need during Ramadan",
+                exp2_desc2: "Engaged in community support and awareness campaigns on social responsibility",
+                exp3_title: "Electromechanical Technician – Internship",
+                exp3_company: "SAHARA PLOMB, Casablanca",
+                exp3_desc1: "Conducted preventive and corrective maintenance on heavy industrial equipment",
+                exp3_desc2: "Assisted in diagnostics and repair of electrical and mechanical systems",
+                exp3_desc3: "Participated in technical documentation and reporting processes",
+                education_title: "Education",
+                education_sub: "My academic journey and qualifications",
+                edu1_title: "Master's in Numerical Design & Simulation in Mechanics",
+                edu1_school: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
+                edu1_desc1: "Advanced training in computer-aided design (CAD) and numerical simulation (FEM, FEA)",
+                edu1_desc2: "In-depth application of tools such as CATIA V5, SolidWorks, and Abaqus",
+                edu1_desc3: "Focus on mechatronic systems, intelligent automation, and vibration analysis (NVH)",
+                edu2_title: "Bachelor's in Numerical Design & Simulation in Mechanics",
+                edu2_school: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
+                edu2_desc1: "Solid foundation in 3D modeling, finite element analysis, and dynamic simulation",
+                edu2_desc2: "Applied theoretical concepts to real-world simulations and virtual prototyping",
+                edu2_desc3: "Use of Matlab, Python, and Arduino for technical and control system simulations",
+                edu3_title: "BTS in Electromechanics & Automated Systems",
+                edu3_school: "Lycée Technique de Settat",
+                edu3_desc1: "Practical training in electrical and mechanical system design, installation, and maintenance",
+                edu3_desc2: "Hands-on experience with automated production lines, control systems, and CNC machines",
+                edu3_desc3: "Learning modules included preventive maintenance, technical diagnostics, and system integration",
+                edu4_title: "High School Diploma in Electrical Science & Technology",
+                edu4_school: "Lycée Charif El Idrissi, Benslimane",
+                edu4_desc1: "Focused on core engineering principles in physics, electrical circuits, and technical drawing",
+                edu4_desc2: "Developed logical thinking and solid mathematical foundation for engineering studies",
+                projects_title: "Projects",
+                projects_sub: "Selected engineering projects and achievements",
+                proj1_title: "Automotive Shock Absorber Simulation",
+                proj1_desc: "Numerical Modeling & Dynamic Analysis using Python to simulate vehicle shock absorber behavior under various conditions.",
+                proj1_tag1: "Numerical Methods",
+                proj1_tag2: "Dynamics",
+                proj2_title: "Mechanical Bracket FEA",
+                proj2_desc: "Design and Finite Element Analysis of a Mechanical Bracket using SolidWorks & Abaqus for industrial applications.",
+                proj3_title: "4-Cylinder Engine Simulation",
+                proj3_desc: "3D Modeling & Kinematic Analysis of a four-cylinder engine using CATIA V5, simulating internal component motion.",
+                proj3_tag1: "Kinematics",
+                proj3_tag2: "Engine Design",
+                proj4_title: "Smart CNC-Controlled Robotic Arm",
+                proj4_desc: "Designed and manufactured an intelligent robotic arm using CNC machining techniques with Arduino-based control system.",
+                proj4_tag1: "Robotics",
+                view_project: "View Project",
+                contact_title: "Contact Me",
+                contact_sub: "Get in touch for collaborations or opportunities",
+                contact_info_title: "Contact Information",
+                location: "Location",
+                phone: "Phone",
+                connect_with_me: "Connect With Me",
+                your_name: "Your Name",
+                your_email: "Your Email",
+                subject: "Subject",
+                your_message: "Your Message",
+                send_message: "Send Message",
+                rights: "All Rights Reserved."
+            },
+            fr: {
+                home: "Accueil",
+                about: "À propos",
+                experience: "Expérience",
+                education: "Formation",
+                projects: "Projets",
+                contact: "Contact",
+                quick_links: "Liens rapides",
+                navigation: "Navigation",
+                contact_info: "Coordonnées",
+                settings: "Paramètres",
+                dark_mode: "Mode sombre",
+                hero_title: "Ingénieur en Conception Mécanique et Simulation",
+                hero_desc: "Spécialisé en conception CAO, simulation numérique et optimisation des systèmes mécaniques avec une passion pour l'innovation et les systèmes intelligents.",
+                view_work: "Voir mes projets",
+                contact_me: "Me contacter",
+                about_me: "À propos de moi",
+                about_sub: "Découvrez mon parcours professionnel et mes compétences",
+                about_title: "Spécialiste en Ingénierie Mécanique",
+                about_desc1: "Étudiant motivé et minutieux en master d'ingénierie mécanique avec une expérience pratique dans les systèmes électromécaniques, la conception 3D (CATIA V5, SolidWorks) et la simulation numérique avec Abaqus.",
+                about_desc2: "Passionné par l'innovation, la robotique et la conception de systèmes intelligents, avec de solides compétences analytiques et de résolution de problèmes. Connu pour mon adaptabilité, mon esprit d'équipe et mon état d'esprit proactif dans les environnements techniques.",
+                experience_title: "Expérience Professionnelle",
+                experience_sub: "Mon parcours à travers divers rôles et responsabilités techniques",
+                exp1_title: "Concepteur Technique – Stage",
+                exp1_company: "Commune de Oulad Ali Toualaa, Casablanca",
+                exp1_desc1: "Mis à jour les schémas techniques et assuré la cohérence de la documentation technique",
+                exp1_desc2: "Animé des sessions de formation en conception mécanique (CAO) pour le personnel technique",
+                exp1_desc3: "Reconnu pour ma compétence technique, mon autonomie et mon transfert efficace de connaissances",
+                exp2_title: "Bénévole – Opérations Humanitaires",
+                exp2_company: "Association Lueur d'Espoir, Tanger",
+                exp2_desc1: "Organisé et distribué de l'aide aux familles dans le besoin pendant le Ramadan",
+                exp2_desc2: "Participé à des campagnes de sensibilisation et de soutien communautaire sur la responsabilité sociale",
+                exp3_title: "Technicien Électromécanique – Stage",
+                exp3_company: "SAHARA PLOMB, Casablanca",
+                exp3_desc1: "Effectué la maintenance préventive et corrective sur des équipements industriels lourds",
+                exp3_desc2: "Assisté dans le diagnostic et la réparation des systèmes électriques et mécaniques",
+                exp3_desc3: "Participé aux processus de documentation technique et de reporting",
+                education_title: "Formation",
+                education_sub: "Mon parcours académique et qualifications",
+                edu1_title: "Master en Conception Numérique et Simulation en Mécanique",
+                edu1_school: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
+                edu1_desc1: "Formation avancée en conception assistée par ordinateur (CAO) et simulation numérique (EF, MEF)",
+                edu1_desc2: "Application approfondie d'outils tels que CATIA V5, SolidWorks et Abaqus",
+                edu1_desc3: "Axé sur les systèmes mécatroniques, l'automatisation intelligente et l'analyse des vibrations (NVH)",
+                edu2_title: "Licence en Conception Numérique et Simulation en Mécanique",
+                edu2_school: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
+                edu2_desc1: "Base solide en modélisation 3D, analyse par éléments finis et simulation dynamique",
+                edu2_desc2: "Application des concepts théoriques à des simulations réelles et au prototypage virtuel",
+                edu2_desc3: "Utilisation de Matlab, Python et Arduino pour les simulations techniques et les systèmes de contrôle",
+                edu3_title: "BTS en Électromécanique et Systèmes Automatisés",
+                edu3_school: "Lycée Technique de Settat",
+                edu3_desc1: "Formation pratique en conception, installation et maintenance des systèmes électriques et mécaniques",
+                edu3_desc2: "Expérience pratique avec des lignes de production automatisées, des systèmes de contrôle et des machines CNC",
+                edu3_desc3: "Modules d'apprentissage incluant la maintenance préventive, les diagnostics techniques et l'intégration système",
+                edu4_title: "Baccalauréat en Sciences et Technologies Électriques",
+                edu4_school: "Lycée Charif El Idrissi, Benslimane",
+                edu4_desc1: "Axé sur les principes fondamentaux de l'ingénierie en physique, circuits électriques et dessin technique",
+                edu4_desc2: "Développement de la pensée logique et d'une base mathématique solide pour les études d'ingénierie",
+                projects_title: "Projets",
+                projects_sub: "Projets d'ingénierie sélectionnés et réalisations",
+                proj1_title: "Simulation d'Amortisseur Automobile",
+                proj1_desc: "Modélisation numérique et analyse dynamique utilisant Python pour simuler le comportement des amortisseurs de véhicule dans diverses conditions.",
+                proj1_tag1: "Méthodes Numériques",
+                proj1_tag2: "Dynamique",
+                proj2_title: "Analyse EF d'un Support Mécanique",
+                proj2_desc: "Conception et analyse par éléments finis d'un support mécanique utilisant SolidWorks et Abaqus pour des applications industrielles.",
+                proj3_title: "Simulation d'un Moteur 4 Cylindres",
+                proj3_desc: "Modélisation 3D et analyse cinématique d'un moteur à quatre cylindres utilisant CATIA V5, simulant le mouvement des composants internes.",
+                proj3_tag1: "Cinématique",
+                proj3_tag2: "Conception de Moteur",
+                proj4_title: "Bras Robotique Intelligent Contrôlé par CNC",
+                proj4_desc: "Conçu et fabriqué un bras robotique intelligent utilisant des techniques d'usinage CNC avec un système de contrôle basé sur Arduino.",
+                proj4_tag1: "Robotique",
+                view_project: "Voir le Projet",
+                contact_title: "Contactez-moi",
+                contact_sub: "Contactez-moi pour des collaborations ou des opportunités",
+                contact_info_title: "Coordonnées",
+                location: "Localisation",
+                phone: "Téléphone",
+                connect_with_me: "Connectez-vous avec moi",
+                your_name: "Votre Nom",
+                your_email: "Votre Email",
+                subject: "Sujet",
+                your_message: "Votre Message",
+                send_message: "Envoyer le Message",
+                rights: "Tous droits réservés."
+            }
+        };
+
         // Preloader
         window.addEventListener('load', function() {
             const preloader = document.querySelector('.preloader');
@@ -2620,11 +2821,18 @@
             document.documentElement.setAttribute('data-theme', savedTheme);
             updateThemeIcon(savedTheme);
             
-            // Set initial language from localStorage or default to English
-            const savedLanguage = localStorage.getItem('language') || 'en';
-            setLanguage(savedLanguage);
-            updateLanguageIcon(savedLanguage);
+            // Set initial language from localStorage or default to en
+            const savedLang = localStorage.getItem('language') || 'en';
+            changeLanguage(savedLang);
             
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if(btn.getAttribute('data-lang') === savedLang) {
+                    btn.classList.add('active');
+                }
+            });
+
             // Animate skill bars when about section is in view
             const aboutSection = document.getElementById('about');
             const aboutObserver = new IntersectionObserver((entries) => {
@@ -2643,7 +2851,29 @@
             aboutObserver.observe(aboutSection);
         }
 
-        // Sidebar functionality - Fixed version
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Save language preference
+            localStorage.setItem('language', lang);
+            
+            // Update all elements with data-translate attribute
+            document.querySelectorAll('[data-translate]').forEach(element => {
+                const key = element.getAttribute('data-translate');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            // Update placeholder texts
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang][key]) {
+                    element.setAttribute('placeholder', translations[lang][key]);
+                }
+            });
+        }
+
+        // Sidebar functionality
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
         const sidebar = document.querySelector('.sidebar');
@@ -2654,16 +2884,16 @@
         function openSidebar() {
             sidebar.classList.add('active');
             sidebarOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when sidebar is open
-            hamburger.classList.add('active'); // Add active class to hamburger
+            document.body.style.overflow = 'hidden';
+            hamburger.classList.add('active');
         }
 
         // Close sidebar function
         function closeSidebarFunc() {
             sidebar.classList.remove('active');
             sidebarOverlay.classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable scrolling
-            hamburger.classList.remove('active'); // Remove active class from hamburger
+            document.body.style.overflow = '';
+            hamburger.classList.remove('active');
         }
 
         // Toggle sidebar when hamburger is clicked
@@ -2691,6 +2921,16 @@
             if (e.key === 'Escape' && sidebar.classList.contains('active')) {
                 closeSidebarFunc();
             }
+        });
+
+        // Language switcher buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const lang = this.getAttribute('data-lang');
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                changeLanguage(lang);
+            });
         });
 
         // Smooth scrolling for anchor links
@@ -2783,28 +3023,11 @@
         const form = document.getElementById('form');
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            const thankYouMessage = document.querySelector('[data-translate="thank_you"]') ? 
-                document.querySelector('[data-translate="thank_you"]').textContent : 
-                'Thank you for your message! I will get back to you soon.';
-            alert(thankYouMessage);
+            const lang = localStorage.getItem('language') || 'en';
+            const message = lang === 'en' ? 'Thank you for your message! I will get back to you soon.' : 'Merci pour votre message ! Je vous répondrai bientôt.';
+            alert(message);
             form.reset();
         });
-
-        // Create floating tech elements
-        function createFloatingTech() {
-            const techCount = 3;
-            for (let i = 0; i < techCount; i++) {
-                const tech = document.createElement('div');
-                tech.className = 'floating-tech';
-                tech.style.top = Math.random() * 80 + 10 + '%';
-                tech.style.left = Math.random() * 80 + 10 + '%';
-                tech.style.animationDelay = Math.random() * 10 + 's';
-                tech.style.animationDuration = Math.random() * 10 + 10 + 's';
-                document.body.appendChild(tech);
-            }
-        }
-
-        createFloatingTech();
 
         // Dark Mode Toggle
         const themeToggle = document.querySelector('.theme-toggle');
@@ -2825,256 +3048,24 @@
         function updateThemeIcon(theme) {
             const icon = theme === 'dark' ? 'fa-moon' : 'fa-sun';
             themeToggle.innerHTML = `<i class="fas ${icon}"></i>`;
-            sidebarThemeToggle.innerHTML = `<i class="fas ${icon}"></i> <span data-translate="${theme === 'dark' ? 'dark_mode' : 'light_mode'}">${theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>`;
-            
-            // Update translations for theme text
-            const currentLanguage = localStorage.getItem('language') || 'en';
-            setLanguage(currentLanguage);
+            sidebarThemeToggle.innerHTML = `<i class="fas ${icon}"></i> <span>${theme === 'dark' ? translations[localStorage.getItem('language') || 'en']['dark_mode'] : translations[localStorage.getItem('language') || 'en']['light_mode']}</span>`;
         }
 
-        // Language Toggle
-        const languageToggle = document.querySelector('.language-toggle');
-        const sidebarLanguageToggle = document.querySelector('.sidebar-language-toggle');
-
-        languageToggle.addEventListener('click', toggleLanguage);
-        sidebarLanguageToggle.addEventListener('click', toggleLanguage);
-
-        function toggleLanguage() {
-            const currentLanguage = localStorage.getItem('language') || 'en';
-            const newLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-            
-            setLanguage(newLanguage);
-            localStorage.setItem('language', newLanguage);
-            updateLanguageIcon(newLanguage);
-        }
-
-        function updateLanguageIcon(lang) {
-            const text = lang === 'en' ? 'FR' : 'EN';
-            languageToggle.innerHTML = `<i class="fas fa-language"></i> <span>${text}</span>`;
-            sidebarLanguageToggle.innerHTML = `<i class="fas fa-language"></i> <span data-translate="language">${lang === 'en' ? 'Français' : 'English'}</span>`;
-        }
-
-        // Translation data
-        const translations = {
-            en: {
-                home: "Home",
-                about: "About",
-                experience: "Experience",
-                education: "Education",
-                projects: "Projects",
-                contact: "Contact",
-                quick_links: "Quick Links",
-                navigation: "Navigation",
-                contact_info: "Contact Info",
-                settings: "Settings",
-                dark_mode: "Dark Mode",
-                light_mode: "Light Mode",
-                language: "Language",
-                name: "Yassine Bouabid",
-                title: "Mechanical Design & Simulation Engineer",
-                hero_desc: "Specializing in CAD design, numerical simulation, and mechanical systems optimization with a passion for innovation and smart systems.",
-                view_work: "View My Work",
-                contact_me: "Contact Me",
-                about_me: "About Me",
-                about_desc: "Get to know more about my professional background and skills",
-                specialist_title: "Mechanical Engineering Specialist",
-                about_text1: "Motivated and detail-oriented Mechanical Engineering master's student with hands-on experience in electromechanical systems, 3D design (CATIA V5, SolidWorks), and numerical simulation using Abaqus.",
-                about_text2: "Passionate about innovation, robotics, and smart systems design, with strong analytical and problem-solving skills. Known for adaptability, teamwork, and a proactive mindset in technical environments.",
-                professional_exp: "Professional Experience",
-                exp_desc: "My journey through various technical roles and responsibilities",
-                june_2024: "June 2024",
-                oct_2024: "October 2024",
-                tech_conceptor: "Technical Conceptor – Internship",
-                commune_oulad: "Commune of Oulad Ali Toualaa, Casablanca",
-                exp_point1: "Updated technical schematics and ensured consistency in technical documentation",
-                exp_point2: "Conducted mechanical design training sessions (CAD) for technical staff",
-                exp_point3: "Recognized for technical proficiency, autonomy, and effective knowledge transfer",
-                apr_2024: "Apr 2024",
-                volunteer: "Volunteer – Humanitarian Operations",
-                association_lueur: "Association Lueur d'Espoir, Tangier",
-                vol_point1: "Organized and distributed aid to families in need during Ramadan",
-                vol_point2: "Engaged in community support and awareness campaigns on social responsibility",
-                feb_2021: "Feb 2021",
-                may_2021: "May 2021",
-                electro_tech: "Electromechanical Technician – Internship",
-                sahara_plomb: "SAHARA PLOMB, Casablanca",
-                tech_point1: "Conducted preventive and corrective maintenance on heavy industrial equipment",
-                tech_point2: "Assisted in diagnostics and repair of electrical and mechanical systems",
-                tech_point3: "Participated in technical documentation and reporting processes",
-                education: "Education",
-                education_desc: "My academic journey and qualifications",
-                year_2024: "2024",
-                present: "Present",
-                master_degree: "Master's in Numerical Design & Simulation in Mechanics",
-                fsac_mecatronique: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
-                master_point1: "Advanced training in computer-aided design (CAD) and numerical simulation (FEM, FEA)",
-                master_point2: "In-depth application of tools such as CATIA V5, SolidWorks, and Abaqus",
-                master_point3: "Focus on mechatronic systems, intelligent automation, and vibration analysis (NVH)",
-                year_2023: "2023",
-                year_2024: "2024",
-                bachelor_degree: "Bachelor's in Numerical Design & Simulation in Mechanics",
-                bachelor_point1: "Solid foundation in 3D modeling, finite element analysis, and dynamic simulation",
-                bachelor_point2: "Applied theoretical concepts to real-world simulations and virtual prototyping",
-                bachelor_point3: "Use of Matlab, Python, and Arduino for technical and control system simulations",
-                year_2021: "2021",
-                year_2023: "2023",
-                bts_degree: "BTS in Electromechanics & Automated Systems",
-                lycee_settat: "Lycée Technique de Settat",
-                bts_point1: "Practical training in electrical and mechanical system design, installation, and maintenance",
-                bts_point2: "Hands-on experience with automated production lines, control systems, and CNC machines",
-                bts_point3: "Learning modules included preventive maintenance, technical diagnostics, and system integration",
-                year_2020: "2020",
-                year_2021: "2021",
-                hs_diploma: "High School Diploma in Electrical Science & Technology",
-                lycee_benslimane: "Lycée Charif El Idrissi, Benslimane",
-                hs_point1: "Focused on core engineering principles in physics, electrical circuits, and technical drawing",
-                hs_point2: "Developed logical thinking and solid mathematical foundation for engineering studies",
-                projects: "Projects",
-                projects_desc: "Selected engineering projects and achievements",
-                project1_title: "Automotive Shock Absorber Simulation",
-                project1_desc: "Numerical Modeling & Dynamic Analysis using Python to simulate vehicle shock absorber behavior under various conditions.",
-                num_methods: "Numerical Methods",
-                dynamics: "Dynamics",
-                project2_title: "Mechanical Bracket FEA",
-                project2_desc: "Design and Finite Element Analysis of a Mechanical Bracket using SolidWorks & Abaqus for industrial applications.",
-                project3_title: "4-Cylinder Engine Simulation",
-                project3_desc: "3D Modeling & Kinematic Analysis of a four-cylinder engine using CATIA V5, simulating internal component motion.",
-                kinematics: "Kinematics",
-                engine_design: "Engine Design",
-                project4_title: "Smart CNC-Controlled Robotic Arm",
-                project4_desc: "Designed and manufactured an intelligent robotic arm using CNC machining techniques with Arduino-based control system.",
-                robotics: "Robotics",
-                view_project: "View Project",
-                contact_me: "Contact Me",
-                contact_desc: "Get in touch for collaborations or opportunities",
-                location: "Location",
-                phone: "Phone",
-                connect_with_me: "Connect With Me",
-                your_name: "Your Name",
-                your_email: "Your Email",
-                subject: "Subject",
-                your_message: "Your Message",
-                send_message: "Send Message",
-                all_rights: "All Rights Reserved",
-                thank_you: "Thank you for your message! I will get back to you soon."
-            },
-            fr: {
-                home: "Accueil",
-                about: "À propos",
-                experience: "Expérience",
-                education: "Formation",
-                projects: "Projets",
-                contact: "Contact",
-                quick_links: "Liens rapides",
-                navigation: "Navigation",
-                contact_info: "Coordonnées",
-                settings: "Paramètres",
-                dark_mode: "Mode sombre",
-                light_mode: "Mode clair",
-                language: "Langue",
-                name: "Yassine Bouabid",
-                title: "Ingénieur en Conception et Simulation Mécanique",
-                hero_desc: "Spécialisé dans la conception CAO, la simulation numérique et l'optimisation des systèmes mécaniques avec une passion pour l'innovation et les systèmes intelligents.",
-                view_work: "Voir mes projets",
-                contact_me: "Me contacter",
-                about_me: "À propos de moi",
-                about_desc: "Découvrez mon parcours professionnel et mes compétences",
-                specialist_title: "Spécialiste en Ingénierie Mécanique",
-                about_text1: "Étudiant motivé et minutieux en master d'ingénierie mécanique avec une expérience pratique dans les systèmes électromécaniques, la conception 3D (CATIA V5, SolidWorks) et la simulation numérique avec Abaqus.",
-                about_text2: "Passionné par l'innovation, la robotique et la conception de systèmes intelligents, avec de solides compétences analytiques et en résolution de problèmes. Reconnu pour mon adaptabilité, mon esprit d'équipe et mon approche proactive dans les environnements techniques.",
-                professional_exp: "Expérience Professionnelle",
-                exp_desc: "Mon parcours à travers divers rôles et responsabilités techniques",
-                june_2024: "Juin 2024",
-                oct_2024: "Octobre 2024",
-                tech_conceptor: "Concepteur Technique – Stage",
-                commune_oulad: "Commune d'Oulad Ali Toualaa, Casablanca",
-                exp_point1: "Mise à jour des schémas techniques et assurance de la cohérence de la documentation technique",
-                exp_point2: "Animation de sessions de formation en conception mécanique (CAO) pour le personnel technique",
-                exp_point3: "Reconnu pour ma compétence technique, mon autonomie et mon transfert efficace de connaissances",
-                apr_2024: "Avril 2024",
-                volunteer: "Bénévole – Opérations Humanitaires",
-                association_lueur: "Association Lueur d'Espoir, Tanger",
-                vol_point1: "Organisation et distribution d'aide aux familles dans le besoin pendant le Ramadan",
-                vol_point2: "Engagement dans le soutien communautaire et les campagnes de sensibilisation sur la responsabilité sociale",
-                feb_2021: "Février 2021",
-                may_2021: "Mai 2021",
-                electro_tech: "Technicien Électromécanique – Stage",
-                sahara_plomb: "SAHARA PLOMB, Casablanca",
-                tech_point1: "Maintenance préventive et corrective d'équipements industriels lourds",
-                tech_point2: "Assistance dans le diagnostic et la réparation des systèmes électriques et mécaniques",
-                tech_point3: "Participation aux processus de documentation technique et de reporting",
-                education: "Formation",
-                education_desc: "Mon parcours académique et qualifications",
-                year_2024: "2024",
-                present: "Présent",
-                master_degree: "Master en Conception Numérique et Simulation en Mécanique",
-                fsac_mecatronique: "FSAC – Centre d'Excellence Mécatronique, Casablanca",
-                master_point1: "Formation avancée en conception assistée par ordinateur (CAO) et simulation numérique (EF, MEF)",
-                master_point2: "Application approfondie d'outils tels que CATIA V5, SolidWorks et Abaqus",
-                master_point3: "Accent sur les systèmes mécatroniques, l'automatisation intelligente et l'analyse des vibrations (NVH)",
-                year_2023: "2023",
-                year_2024: "2024",
-                bachelor_degree: "Licence en Conception Numérique et Simulation en Mécanique",
-                bachelor_point1: "Base solide en modélisation 3D, analyse par éléments finis et simulation dynamique",
-                bachelor_point2: "Application des concepts théoriques à des simulations réelles et au prototypage virtuel",
-                bachelor_point3: "Utilisation de Matlab, Python et Arduino pour les simulations techniques et des systèmes de contrôle",
-                year_2021: "2021",
-                year_2023: "2023",
-                bts_degree: "BTS en Électromécanique et Systèmes Automatisés",
-                lycee_settat: "Lycée Technique de Settat",
-                bts_point1: "Formation pratique en conception, installation et maintenance des systèmes électriques et mécaniques",
-                bts_point2: "Expérience pratique avec les lignes de production automatisées, les systèmes de contrôle et les machines CNC",
-                bts_point3: "Modules d'apprentissage incluant la maintenance préventive, le diagnostic technique et l'intégration de systèmes",
-                year_2020: "2020",
-                year_2021: "2021",
-                hs_diploma: "Baccalauréat en Sciences Électriques et Technologiques",
-                lycee_benslimane: "Lycée Charif El Idrissi, Benslimane",
-                hs_point1: "Concentration sur les principes fondamentaux de l'ingénierie en physique, circuits électriques et dessin technique",
-                hs_point2: "Développement de la pensée logique et d'une base mathématique solide pour les études d'ingénierie",
-                projects: "Projets",
-                projects_desc: "Projets d'ingénierie sélectionnés et réalisations",
-                project1_title: "Simulation d'Amortisseur Automobile",
-                project1_desc: "Modélisation numérique et analyse dynamique utilisant Python pour simuler le comportement des amortisseurs de véhicule dans diverses conditions.",
-                num_methods: "Méthodes Numériques",
-                dynamics: "Dynamique",
-                project2_title: "Analyse EF d'un Support Mécanique",
-                project2_desc: "Conception et analyse par éléments finis d'un support mécanique utilisant SolidWorks et Abaqus pour des applications industrielles.",
-                project3_title: "Simulation d'un Moteur 4 Cylindres",
-                project3_desc: "Modélisation 3D et analyse cinématique d'un moteur à quatre cylindres utilisant CATIA V5, simulant le mouvement des composants internes.",
-                kinematics: "Cinématique",
-                engine_design: "Conception de Moteurs",
-                project4_title: "Bras Robotique Intelligent à Commande CNC",
-                project4_desc: "Conception et fabrication d'un bras robotique intelligent utilisant des techniques d'usinage CNC avec un système de contrôle basé sur Arduino.",
-                robotics: "Robotique",
-                view_project: "Voir le Projet",
-                contact_me: "Me contacter",
-                contact_desc: "Contactez-moi pour des collaborations ou opportunités",
-                location: "Localisation",
-                phone: "Téléphone",
-                connect_with_me: "Connectez-vous avec moi",
-                your_name: "Votre Nom",
-                your_email: "Votre Email",
-                subject: "Sujet",
-                your_message: "Votre Message",
-                send_message: "Envoyer le Message",
-                all_rights: "Tous droits réservés",
-                thank_you: "Merci pour votre message! Je vous répondrai bientôt."
+        // Create floating tech elements
+        function createFloatingTech() {
+            const techCount = 3;
+            for (let i = 0; i < techCount; i++) {
+                const tech = document.createElement('div');
+                tech.className = 'floating-tech';
+                tech.style.top = Math.random() * 80 + 10 + '%';
+                tech.style.left = Math.random() * 80 + 10 + '%';
+                tech.style.animationDelay = Math.random() * 10 + 's';
+                tech.style.animationDuration = Math.random() * 10 + 10 + 's';
+                document.body.appendChild(tech);
             }
-        };
-
-        // Set language function
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translations[lang][key];
-                    } else {
-                        element.textContent = translations[lang][key];
-                    }
-                }
-            });
         }
+
+        createFloatingTech();
     </script>
 </body>
 </html>
